@@ -56,15 +56,8 @@ host=192.168.50.50
 port=3307
 ```
 
-## Interact with the primary database
 
-```bash
-mysql --defaults-group-suffix=_primary1 -e "select @@read_only"
-mysql --defaults-group-suffix=_replica1 -e "select @@read_only" 
-
-```
-
-## Interact with the replica database
+## Interacting with the primary and replica
 
 ```bash
 mysql8-docker on  main [!?] via 🐳 desktop-linux 
