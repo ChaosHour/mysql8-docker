@@ -35,15 +35,25 @@ docker build --build-arg build_type=replica -t mysql-replica .
 ```Go
 docker-compose up -d --wait
 
-
-
-docker-compose up -d --wait
-
 [+] Running 3/3
  ✔ Network mysql8-docker_db-network         Created                                                                                                                                                                               0.1s
  ✔ Container mysql8-docker-mysql-primary-1  Healthy                                                                                                                                                                               0.1s
  ✔ Container mysql8-docker-mysql-replica-1  Healthy                                                                                                                                                                               0.0s
 
+```
+
+## Using the ~/.my.cnf
+```bash
+[client_primary1]
+user=root
+password=xxxx
+host=192.168.50.50
+port=3306
+[client_replica1]
+user=root
+password=xxxx
+host=192.168.50.50
+port=3307
 ```
 
 ## Interact with the primary database
@@ -52,7 +62,6 @@ docker-compose up -d --wait
 mysql --defaults-group-suffix=_primary1 -e "select @@read_only"
 mysql --defaults-group-suffix=_replica1 -e "select @@read_only" 
 
-mysql --defaults-group-suffix=_replica1 -e "show replica status\G" 
 ```
 
 ## Interact with the replica database
