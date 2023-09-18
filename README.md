@@ -1,7 +1,7 @@
 # MySQL 8 Docker, with primary and replica 
 
 
-## To run the primary section, you can run the following command:
+## How To use this project, a little prep work is needed. 
 ```Go
 Working with Docker creds:
 
