@@ -2,26 +2,12 @@ CREATE DATABASE IF NOT EXISTS chaos;
 
 \u chaos
 DROP TABLE IF EXISTS my_table;
-
-
 DROP TABLE IF EXISTS my_log;
-
-
 DROP TABLE IF EXISTS employees;
-
-
 DROP PROCEDURE IF EXISTS my_proc;
-
-
 DROP PROCEDURE IF EXISTS my_proc_new;
-
-
 DROP event IF EXISTS my_event;
-
-
 DROP VIEW IF EXISTS my_view;
-
-
 DROP VIEW IF EXISTS my_view2;
 
 -- Create a table
