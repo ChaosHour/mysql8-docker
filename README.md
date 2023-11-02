@@ -16,30 +16,15 @@ The replica password used for testing is in the replica.sql file. I would recomm
 An example of this is in the primary.sql file.
 ```
 
-## To build the primary section, you can run the following command:
-```Go
-
-docker build -t mysql-primary .
-
-``` 
-
-## To build the replica section, you can run the following command:
-    
-```Go
-docker build --build-arg build_type=replica -t mysql-replica .
-
+## To build and start the containers
+```bash
+make start
 ```
 
-## docker-compose
-
-```Go
-docker-compose up -d --wait
-
-[+] Running 3/3
- ✔ Network mysql8-docker_db-network         Created                                                                                                                                                                               0.1s
- ✔ Container mysql8-docker-mysql-primary-1  Healthy                                                                                                                                                                               0.1s
- ✔ Container mysql8-docker-mysql-replica-1  Healthy                                                                                                                                                                               0.0s
-
+## To stop the containers and remove the containers and volumes.
+```bash
+make stop
+make clean
 ```
 
 ## Using the ~/.my.cnf
