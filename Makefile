@@ -13,8 +13,9 @@ start: build-primary build-replica
 
 # Stop the primary and replica
 stop:
-	docker-compose down
+	docker-compose down -v --remove-orphans
 
 # Clean up the images
 clean:
 	-docker rmi mysql-primary mysql-replica
+	-docker volume rm mysql-primary-data mysql-replica-data
